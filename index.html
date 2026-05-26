@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Right-Siting PE Care | WIRQIS 2026 | Montefiore Einstein</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:        #002F5D;
+    --navy-mid:    #003F7A;
+    --navy-light:  #EEF3F9;
+    --navy-xlight: #F7F9FC;
+    --teal:        #00857C;
+    --teal-light:  #E6F4F3;
+    --teal-mid:    #007A72;
+    --gold:        #C8931A;
+    --gold-light:  #FDF6E7;
+    --white:       #FFFFFF;
+    --gray-text:   #4A5568;
+    --gray-light:  #E8EDF2;
+    --gray-rule:   #D0DAE6;
+    --red:         #C0392B;
+    --body-bg:     #F4F7FA;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Libre Franklin', sans-serif;
+    background: var(--body-bg);
+    color: var(--navy);
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: var(--navy);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+  }
+
+  .topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .logo-m {
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #fff;
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+
+  .logo-e {
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--teal);
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+
+  .logo-sep {
+    width: 1px;
+    height: 20px;
+    background: rgba(255,255,255,0.3);
+    margin: 0 12px;
+  }
+
+  .logo-dept {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.05em;
+  }
+
+  .topbar-tags {
+    display: flex;
+    gap: 8px;
+  }
+
+  .topbar-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.7);
+  }
+
+  .topbar-tag.qi {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: #fff;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--white);
+    border-bottom: 3px solid var(--teal);
+    padding: 32px 40px 28px;
+  }
+
+  .poster-num {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: clamp(19px, 2.8vw, 28px);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.25;
+    max-width: 860px;
+    margin-bottom: 12px;
+  }
+
+  h1 em {
+    color: var(--teal);
+    font-style: italic;
+  }
+
+  .header-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    font-size: 13px;
+    color: var(--gray-text);
+    margin-top: 4px;
+  }
+
+  .header-meta strong { color: var(--navy); font-weight: 600; }
+  .header-meta .sep { color: var(--gray-rule); }
+
+  /* ── MAIN LAYOUT ── */
+  .main {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 28px 40px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--gray-rule);
+    border-radius: 6px;
+    padding: 22px 22px 20px;
+    overflow: hidden;
+  }
+
+  .card.span2 { grid-column: span 2; }
+  .card.span3 { grid-column: span 3; }
+
+  .card-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--gray-rule);
+    margin-bottom: 14px;
+  }
+
+  .card p {
+    font-size: 13.5px;
+    color: var(--gray-text);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+
+  .card p:last-child { margin-bottom: 0; }
+
+  /* ── STAT ROW ── */
+  .stat-row {
+    display: flex;
+    gap: 10px;
+    margin: 14px 0 4px;
+  }
+
+  .stat {
+    flex: 1;
+    background: var(--navy-xlight);
+    border: 1px solid var(--gray-rule);
+    border-top: 3px solid var(--teal);
+    border-radius: 4px;
+    padding: 14px 12px 12px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--navy);
+    display: block;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 10.5px;
+    color: var(--gray-text);
+    display: block;
+    margin-top: 5px;
+    line-height: 1.3;
+  }
+
+  .stat-src {
+    font-size: 9px;
+    color: #9aaabf;
+    display: block;
+    margin-top: 3px;
+    font-style: italic;
+  }
+
+  /* ── AIM CARD ── */
+  .card-aim {
+    background: var(--navy);
+    border-color: var(--navy);
+  }
+
+  .card-aim .card-label {
+    color: rgba(255,255,255,0.5);
+    border-color: rgba(255,255,255,0.15);
+  }
+
+  .card-aim p {
+    color: rgba(255,255,255,0.85);
+    font-size: 14.5px;
+    font-weight: 500;
+  }
+
+  .aim-target {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--teal);
+    border-radius: 4px;
+    padding: 12px 18px;
+    margin-top: 12px;
+  }
+
+  .aim-target .pct {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .aim-target span {
+    font-size: 13px;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.4;
+  }
+
+  /* ── WORKFLOW ── */
+  .workflow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 18px 0 10px;
+    overflow-x: auto;
+    padding: 4px 0;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 72px;
+    gap: 0;
+  }
+
+  .step-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 2px solid var(--teal-mid);
+  }
+
+  .step-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: center;
+    margin-top: 7px;
+  }
+
+  .step-sub {
+    font-size: 10px;
+    color: var(--gray-text);
+    text-align: center;
+    margin-top: 2px;
+    line-height: 1.2;
+  }
+
+  .arrow {
+    color: var(--gray-rule);
+    font-size: 20px;
+    margin: 0 2px;
+    padding-bottom: 20px;
+    flex-shrink: 0;
+  }
+
+  .hardstop {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-left: 3px solid var(--red);
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-size: 11.5px;
+    color: #7f1d1d;
+    line-height: 1.5;
+    margin-top: 12px;
+  }
+
+  .hardstop strong { color: var(--red); font-weight: 700; }
+
+  /* ── INTERVENTION ── */
+  .int-list { list-style: none; margin-top: 4px; }
+
+  .int-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gray-light);
+  }
+
+  .int-list li:last-child { border-bottom: none; }
+
+  .int-icon {
+    width: 30px;
+    height: 30px;
+    background: var(--teal-light);
+    border: 1px solid rgba(0,133,124,0.2);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .int-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    display: block;
+  }
+
+  .int-desc {
+    font-size: 12px;
+    color: var(--gray-text);
+    margin-top: 2px;
+    line-height: 1.45;
+  }
+
+  /* ── MEASURES ── */
+  .measures-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .mbox {
+    border-radius: 4px;
+    padding: 12px 14px;
+    background: var(--navy-xlight);
+    border: 1px solid var(--gray-rule);
+  }
+
+  .mbox.span2 { grid-column: span 2; background: var(--gold-light); border-color: rgba(200,147,26,0.3); }
+
+  .mbox-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .mbox.span2 .mbox-label { color: var(--gold); }
+
+  .mbox-content {
+    font-size: 12px;
+    color: var(--gray-text);
+    line-height: 1.6;
+  }
+
+  /* ── SAFETY FILTERS ── */
+  .safety-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .sf {
+    background: var(--navy-xlight);
+    border: 1px solid var(--gray-rule);
+    border-radius: 4px;
+    padding: 12px 12px 10px;
+  }
+
+  .sf.judgment {
+    background: #FFFBEB;
+    border-color: rgba(200,147,26,0.4);
+    border-left: 3px solid var(--gold);
+  }
+
+  .sf-head {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 5px;
+  }
+
+  .sf-icon { font-size: 14px; }
+
+  .sf-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .sf.judgment .sf-title { color: #92400E; }
+
+  .sf-desc {
+    font-size: 11.5px;
+    color: var(--gray-text);
+    line-height: 1.4;
+  }
+
+  /* ── EQUITY ── */
+  .card-equity {
+    background: var(--teal-light);
+    border-color: rgba(0,133,124,0.25);
+    border-top: 3px solid var(--teal);
+  }
+
+  .equity-stmt {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--teal-mid);
+    line-height: 1.4;
+    margin-bottom: 14px;
+  }
+
+  .equity-stmt em { font-style: italic; }
+
+  .equity-list { list-style: none; }
+
+  .equity-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(0,133,124,0.15);
+    font-size: 13px;
+    color: var(--navy);
+    line-height: 1.4;
+  }
+
+  .equity-list li:last-child { border-bottom: none; }
+
+  .eq-icon { font-size: 18px; flex-shrink: 0; }
+
+  /* ── IMPLEMENTATION STATUS ── */
+  .status-list { list-style: none; margin-top: 4px; }
+
+  .status-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gray-light);
+    font-size: 13px;
+    color: var(--gray-text);
+    line-height: 1.5;
+  }
+
+  .status-list li:last-child { border-bottom: none; }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  .dot.pending { background: var(--gold); }
+
+  /* ── IMPACT ── */
+  .impact-box {
+    background: var(--navy-xlight);
+    border: 1px solid var(--gray-rule);
+    border-left: 4px solid var(--navy);
+    border-radius: 4px;
+    padding: 16px 18px;
+    margin-top: 12px;
+  }
+
+  .impact-box p {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .impact-box small {
+    font-size: 11.5px;
+    color: var(--gray-text);
+    font-style: italic;
+  }
+
+  /* ── NEXT STEPS ── */
+  .next-list { list-style: none; counter-reset: ns; margin-top: 4px; }
+
+  .next-list li {
+    counter-increment: ns;
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gray-light);
+    font-size: 13px;
+    color: var(--gray-text);
+    line-height: 1.5;
+  }
+
+  .next-list li:last-child { border-bottom: none; }
+
+  .next-list li::before {
+    content: counter(ns, decimal-leading-zero);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--teal);
+    flex-shrink: 0;
+    padding-top: 1px;
+    min-width: 20px;
+  }
+
+  /* ── SUMMARY ── */
+  .summary {
+    background: var(--navy);
+    padding: 28px 40px;
+  }
+
+  .summary .s-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .summary p {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+    max-width: 960px;
+    margin-bottom: 12px;
+  }
+
+  .summary p:last-child { margin-bottom: 0; }
+
+  .refs {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    font-style: italic;
+    margin-top: 12px !important;
+  }
+
+  /* ── CONTACT BAR ── */
+  .contact-bar {
+    background: var(--white);
+    border-top: 1px solid var(--gray-rule);
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .contact-bar .authors {
+    font-size: 12.5px;
+    color: var(--navy);
+  }
+
+  .contact-bar .qr-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .contact-bar .qr-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    text-align: right;
+  }
+
+  #qr-code { background: #fff; padding: 5px; border: 1px solid var(--gray-rule); border-radius: 4px; line-height: 0; display: inline-block; }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer {
+    background: #FEF2F2;
+    border-top: 1px solid #FECACA;
+    padding: 10px 40px;
+    font-size: 11.5px;
+    color: #7f1d1d;
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .main { grid-template-columns: 1fr 1fr; padding: 16px 20px 24px; gap: 12px; }
+    .card.span2, .card.span3 { grid-column: span 2; }
+    .safety-grid { grid-template-columns: 1fr 1fr; }
+    h1 { font-size: 18px; }
+    .header, .topbar, .summary, .contact-bar, .disclaimer { padding-left: 20px; padding-right: 20px; }
+  }
+
+  @media (max-width: 600px) {
+    .main { grid-template-columns: 1fr; padding: 12px 14px 20px; }
+    .card.span2, .card.span3 { grid-column: span 1; }
+    .safety-grid { grid-template-columns: 1fr 1fr; }
+    .topbar { padding: 0 14px; }
+    .topbar-tags { display: none; }
+    .header { padding: 20px 14px; }
+    .header-meta { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .header-meta .sep { display: none; }
+    .stat-row { flex-direction: row; }
+    .summary, .contact-bar, .disclaimer { padding-left: 14px; padding-right: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-brand">
+    <div class="logo-mark">
+      <span class="logo-m">Montefiore&nbsp;</span><span class="logo-e">Einstein</span>
+    </div>
+    <div class="logo-sep"></div>
+    <div class="logo-dept">Department of Emergency Medicine</div>
+  </div>
+  <div class="topbar-tags">
+    <div class="topbar-tag qi">QI Implementation</div>
+    <div class="topbar-tag">Poster #33</div>
+    <div class="topbar-tag">WIRQIS 2026</div>
+    <div class="topbar-tag">Pre-launch · Accepted Abstract</div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="poster-num">WIRQIS 2026 &nbsp;·&nbsp; Poster #33 &nbsp;·&nbsp; Quality Improvement</div>
+  <h1>Right-Siting PE Care: Implementation of a <em>Hestia-Based Outpatient Discharge Pathway</em> in a High-Volume Urban Emergency Department</h1>
+  <div class="header-meta">
+    <span><strong>André Freire, MD</strong></span>
+    <span class="sep">·</span>
+    <span><strong>Babak Toosi, MD</strong></span>
+    <span class="sep">|</span>
+    <span>Department of Emergency Medicine, Montefiore Einstein</span>
+    <span class="sep">|</span>
+    <span style="color:var(--teal);font-weight:600;">Pre-launch · No outcome claims made</span>
+  </div>
+</div>
+
+<!-- GRID -->
+<div class="main">
+
+  <!-- BACKGROUND -->
+  <div class="card">
+    <div class="card-label">Background</div>
+    <p>Outpatient treatment is guideline-supported for carefully selected, low-risk PE. The operational problem is not just risk prediction. Patients need medication in hand, clear discharge instructions, and reliable early follow-up.</p>
+    <div class="stat-row">
+      <div class="stat">
+        <span class="stat-num">38.4%</span>
+        <span class="stat-label">Treated at home in Hestia arm</span>
+        <span class="stat-src">Roy et al., 2021</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">1.33%</span>
+        <span class="stat-label">30-day composite outcome (VTE, bleed, death)</span>
+        <span class="stat-src">HOME-PE</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">0</span>
+        <span class="stat-label">Recurrent or fatal PE</span>
+        <span class="stat-src">HOME-PE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCAL PROBLEM -->
+  <div class="card">
+    <div class="card-label">Local Problem</div>
+    <p>Low-risk PE patients may still be admitted for logistics: medication cost, uncertain access, incomplete documentation, or lack of fast follow-up.</p>
+    <p>Each avoidable admission adds boarding time, inpatient cost, and patient disruption without changing the anticoagulation plan.</p>
+  </div>
+
+  <!-- MEASURES -->
+  <div class="card">
+    <div class="card-label">Measures</div>
+    <div class="measures-grid">
+      <div class="mbox">
+        <span class="mbox-label">Process</span>
+        <div class="mbox-content">Pathway use · DOAC load · Voucher use · Aftercare message sent</div>
+      </div>
+      <div class="mbox">
+        <span class="mbox-label">Outcome</span>
+        <div class="mbox-content">PE admission rate · 72-hour follow-up completion</div>
+      </div>
+      <div class="mbox span2">
+        <span class="mbox-label">Balancing</span>
+        <div class="mbox-content">ED return visits · Bleeding events · Recurrent VTE · First-fill failure</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AIM + WORKFLOW -->
+  <div class="card span2 card-aim">
+    <div class="card-label">Aim &amp; ED Workflow</div>
+    <p>Design a standardized Hestia-based ED discharge pathway for hemodynamically stable patients with confirmed acute PE who meet safety, medication access, and follow-up criteria.</p>
+    <div class="aim-target">
+      <span class="pct">−20%</span>
+      <span>Target after launch: reduce logistically<br>driven PE admissions</span>
+    </div>
+    <div class="workflow">
+      <div class="step"><div class="step-num">1</div><div class="step-title">Diagnose</div><div class="step-sub">Confirmed<br>acute PE</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="step-num">2</div><div class="step-title">Screen</div><div class="step-sub">Hestia<br>negative</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="step-num">3</div><div class="step-title">Load</div><div class="step-sub">First<br>DOAC dose</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="step-num">4</div><div class="step-title">Bridge</div><div class="step-sub">Voucher<br>if needed</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="step-num">5</div><div class="step-title">Close Loop</div><div class="step-sub">72-hr<br>follow-up</div></div>
+    </div>
+    <div class="hardstop"><strong>Hard stops:</strong> instability · bleeding risk · oxygen need · renal failure · pregnancy · HIT history · social instability · medication access failure · clinician concern</div>
+  </div>
+
+  <!-- INTERVENTION -->
+  <div class="card">
+    <div class="card-label">Intervention Bundle</div>
+    <ul class="int-list">
+      <li>
+        <div class="int-icon">☑</div>
+        <div><span class="int-title">Hestia Screen</span><span class="int-desc">.HESTIAPE documents all 11 no-go criteria at disposition.</span></div>
+      </li>
+      <li>
+        <div class="int-icon">💊</div>
+        <div><span class="int-title">DOAC Load</span><span class="int-desc">Apixaban 10 mg or rivaroxaban 15 mg given and tolerated before discharge.</span></div>
+      </li>
+      <li>
+        <div class="int-icon">💳</div>
+        <div><span class="int-title">Medication Access</span><span class="int-desc">Voucher workflow addresses first-fill cost before the patient reaches the pharmacy.</span></div>
+      </li>
+      <li>
+        <div class="int-icon">📅</div>
+        <div><span class="int-title">72-Hour Follow-Up</span><span class="int-desc">Epic Secure Message to ED Aftercare with appointment details in discharge paperwork.</span></div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- IMPLEMENTATION STATUS -->
+  <div class="card">
+    <div class="card-label">Implementation Status</div>
+    <ul class="status-list">
+      <li>
+        <div class="dot"></div>
+        <div>Materials finalized: operational protocol, Epic SmartPhrases, nursing note, patient instructions, and SmartSet checklist.</div>
+      </li>
+      <li>
+        <div class="dot pending"></div>
+        <div>Launch phase: Epic SmartSet build, voucher-folder placement, and Aftercare referral workflow confirmation.</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- IMPACT -->
+  <div class="card">
+    <div class="card-label">Anticipated Impact</div>
+    <div class="impact-box">
+      <p>A low-risk PE discharge pathway can convert evidence into an operational bundle: risk stratification, medication access, and reliable follow-up.</p>
+      <small>This poster reports design and implementation readiness. Outcome analysis will follow after launch.</small>
+    </div>
+  </div>
+
+  <!-- SAFETY FILTERS -->
+  <div class="card span3">
+    <div class="card-label">Clinical Safety Filters</div>
+    <div class="safety-grid">
+      <div class="sf">
+        <div class="sf-head"><span class="sf-icon">❤️</span><span class="sf-title">Hemodynamics</span></div>
+        <span class="sf-desc">SBP ≥100 and HR &lt;110 without PE-related instability</span>
+      </div>
+      <div class="sf">
+        <div class="sf-head"><span class="sf-icon">🩸</span><span class="sf-title">Bleeding Risk</span></div>
+        <span class="sf-desc">No active bleeding or high-risk bleeding condition</span>
+      </div>
+      <div class="sf">
+        <div class="sf-head"><span class="sf-icon">💨</span><span class="sf-title">Oxygen Need</span></div>
+        <span class="sf-desc">No oxygen requirement expected beyond 24 hours</span>
+      </div>
+      <div class="sf">
+        <div class="sf-head"><span class="sf-icon">⚕️</span><span class="sf-title">Treatment Complexity</span></div>
+        <span class="sf-desc">No thrombolysis, embolectomy, HIT, pregnancy, severe renal/liver impairment</span>
+      </div>
+      <div class="sf">
+        <div class="sf-head"><span class="sf-icon">🏠</span><span class="sf-title">Social Stability</span></div>
+        <span class="sf-desc">Housing, phone, pharmacy access, and ability to return</span>
+      </div>
+      <div class="sf judgment">
+        <div class="sf-head"><span class="sf-icon">👤</span><span class="sf-title">Clinician Judgment</span></div>
+        <span class="sf-desc">Physician-in-charge may overrule discharge when the story does not fit</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EQUITY -->
+  <div class="card card-equity">
+    <div class="card-label">Equity Logic</div>
+    <div class="equity-stmt">Medication access is treated as a <em>safety criterion</em>, not an afterthought.</div>
+    <ul class="equity-list">
+      <li><span class="eq-icon">✉️</span><span><strong>$0 first-fill voucher</strong> when cost is a barrier</span></li>
+      <li><span class="eq-icon">📄</span><span>Clear discharge packet and return precautions in plain language</span></li>
+    </ul>
+  </div>
+
+  <!-- NEXT STEPS -->
+  <div class="card">
+    <div class="card-label">Next Steps</div>
+    <ol class="next-list">
+      <li>Complete Epic SmartSet build.</li>
+      <li>Confirm Aftercare scheduling pathway and callback loop.</li>
+      <li>Launch pilot with weekly review of process, outcome, and balancing measures.</li>
+      <li>Report first post-launch run chart once sufficient cases accrue.</li>
+    </ol>
+  </div>
+
+</div><!-- /main -->
+
+<!-- SUMMARY -->
+<div class="summary">
+  <span class="s-label">Project Summary</span>
+  <p>We designed a Hestia-based outpatient PE pathway for a high-volume Bronx safety-net ED. The pathway embeds low-risk PE screening into Epic through .HESTIAPE, a PE Discharge SmartSet, 72-hour Aftercare referral, and a voucher workflow for first-fill DOAC access. Planned measures include pathway use, follow-up completion, ED returns, and admission rates among Hestia-negative patients. Target after launch: 20% reduction in logistically driven PE admissions.</p>
+  <p class="refs">References: Roy PM et al. Eur Heart J. 2021 · Becattini C et al. Eur Heart J. 2021 · ACEP Clinical Policy: Acute Venous Thromboembolic Disease · 2026 Multisociety Acute PE Guideline</p>
+</div>
+
+<!-- CONTACT + QR -->
+<div class="contact-bar">
+  <div class="authors">
+    <strong>André Freire, MD &nbsp;·&nbsp; Babak Toosi, MD</strong><br>
+    <span style="font-size:12px;color:var(--gray-text);">Interdisciplinary team: Maria Mainolfi, RN, BSN &nbsp;·&nbsp; Ketty Dominguez &nbsp;|&nbsp; Montefiore Einstein Emergency Department</span>
+  </div>
+  <div class="qr-wrap">
+    <div class="qr-label">Scan for<br>digital poster</div>
+    <div id="qr-code"></div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  No outcome claims are made before launch. This poster describes the evidence-informed intervention, implementation package, and planned evaluation.
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  try {
+    new QRCode(document.getElementById("qr-code"), {
+      text: window.location.href,
+      width: 76,
+      height: 76,
+      colorDark: "#002F5D",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  } catch(e) {
+    document.getElementById("qr-code").innerHTML =
+      '<div style="width:76px;height:76px;background:#EEF3F9;display:flex;align-items:center;justify-content:center;font-size:9px;color:#9aaabf;text-align:center;border-radius:4px;padding:6px;">QR loads<br>when hosted</div>';
+  }
+</script>
+
+</body>
+</html>
