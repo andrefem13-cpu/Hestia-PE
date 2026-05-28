@@ -660,6 +660,47 @@
     font-style: italic;
   }
 
+  /* ── NO-GO DOMAINS ── */
+  .card-nogo {
+    padding: 0;
+    overflow: hidden;
+    border-color: var(--navy);
+  }
+
+  .nogo-header {
+    background: var(--navy);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-bottom: 3px solid var(--teal);
+  }
+
+  .nogo-body {
+    background: var(--white);
+    padding: 18px 22px 16px;
+  }
+
+  .nogo-list {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.7;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .nogo-caveat {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--teal-mid);
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 0 !important;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 960px) {
     .main { grid-template-columns: 1fr 1fr; padding: 16px 20px 24px; gap: 12px; }
@@ -866,6 +907,15 @@
         <div class="sf-head"><span class="sf-icon">👤</span><span class="sf-title">Clinician Judgment</span></div>
         <span class="sf-desc">Physician-in-charge may overrule discharge when the story does not fit</span>
       </div>
+    </div>
+  </div>
+
+  <!-- HESTIA NO-GO DOMAINS -->
+  <div class="card span3 card-nogo">
+    <div class="nogo-header">Hestia No-Go Domains</div>
+    <div class="nogo-body">
+      <p class="nogo-list">Instability &nbsp;·&nbsp; Thrombolysis/embolectomy need &nbsp;·&nbsp; Bleeding risk &nbsp;·&nbsp; Oxygen need &nbsp;·&nbsp; PE on anticoagulation &nbsp;·&nbsp; IV analgesia need &nbsp;·&nbsp; Medical or social admission need &nbsp;·&nbsp; CrCl &lt;30 &nbsp;·&nbsp; Severe liver disease &nbsp;·&nbsp; Pregnancy &nbsp;·&nbsp; HIT history</p>
+      <p class="nogo-caveat">Hestia-negative status is necessary, not sufficient. Medication access, follow-up, and clinician judgment still decide discharge.</p>
     </div>
   </div>
 
